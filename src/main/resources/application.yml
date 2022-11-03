@@ -1,0 +1,28 @@
+#keycloak:
+#  auth-server-url: http://localhost:8080/
+#  realm: myapp
+#  ssl-required: external
+#  resource: app-myapp
+#  credentials:
+#    secret: secret
+#  bearer-only: true
+keycloak:
+  auth-server-url: http://localhost:8080/
+  realm: demo
+  ssl-required: external
+  resource: react-app
+  bearer-only: true
+spring:
+  application:
+    name: myapp
+  main:
+    allow-circular-references: true
+server:
+  port : 8081
+web:
+  cors:
+    allowed-origins: "http://localhost:8081/"
+    allowed-methods: GET, POST, PATCH, PUT, DELETE, OPTIONS, HEAD
+    max-age: 3600
+    allowed-headers: "Requestor-Type"
+    exposed-headers: "X-Get-Header"
